@@ -21,7 +21,7 @@ export default function ComingSoon() {
             <Link to="/" className="inline-block mb-6">
               <img
                 className="dark:hidden"
-                src="./images/logo/logo.svg"
+                src="./images/logo/logo-mamvir.svg"
                 alt="Logo"
               />
               <img
