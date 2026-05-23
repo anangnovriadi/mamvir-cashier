@@ -4,8 +4,8 @@ export default function MarketingMetricsCards() {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 xl:grid-cols-3">
       {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-        <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white/[0.90]">
+      <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+        <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-lg bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white/[0.90]">
           <ShootingStarIcon className="size-6" />
         </div>
 
@@ -34,8 +34,8 @@ export default function MarketingMetricsCards() {
       {/* <!-- Metric Item End --> */}
 
       {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-        <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white/[0.90]">
+      <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+        <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-lg bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white/[0.90]">
           <GroupIcon className="size-6" />
         </div>
 
@@ -64,8 +64,8 @@ export default function MarketingMetricsCards() {
       {/* <!-- Metric Item End --> */}
 
       {/* <!-- Metric Item Start --> */}
-      <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-        <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-xl bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white/[0.90]">
+      <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+        <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-lg bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-white/[0.90]">
           <DollarLineIcon className="size-6" />
         </div>
         <p className="text-gray-500 text-theme-sm dark:text-gray-400">

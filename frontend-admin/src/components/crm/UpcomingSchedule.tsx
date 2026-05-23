@@ -29,7 +29,7 @@ export default function UpcomingSchedule() {
     setIsOpen(false);
   }
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] sm:p-6">
+    <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] sm:p-6">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           Upcoming Schedule
@@ -68,7 +68,7 @@ export default function UpcomingSchedule() {
               <div className="flex items-start gap-3">
                 <div>
                   <Checkbox
-                    className="w-5 h-5 rounded-md"
+                    className="w-5 h-5 rounded-lg"
                     checked={checkedItems["wed-11-jan"]}
                     onChange={() => handleCheckboxChange("wed-11-jan")}
                   />
@@ -97,7 +97,7 @@ export default function UpcomingSchedule() {
               <div className="flex items-start gap-3">
                 <div>
                   <Checkbox
-                    className="w-5 h-5 rounded-md"
+                    className="w-5 h-5 rounded-lg"
                     checked={checkedItems["fri-15-feb"]}
                     onChange={() => handleCheckboxChange("fri-15-feb")}
                   />
@@ -126,7 +126,7 @@ export default function UpcomingSchedule() {
               <div className="flex items-start gap-3">
                 <div>
                   <Checkbox
-                    className="w-5 h-5 rounded-md"
+                    className="w-5 h-5 rounded-lg"
                     checked={checkedItems["thu-18-mar"]}
                     onChange={() => handleCheckboxChange("thu-18-mar")}
                   />

@@ -15,7 +15,7 @@ export default function TopChannel() {
     setIsOpen(false);
   }
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+    <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
       <div className="flex items-start justify-between">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           Top Channels

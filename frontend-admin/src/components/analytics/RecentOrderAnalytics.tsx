@@ -79,7 +79,7 @@ const tableData: Product[] = [
 
 export default function RecentOrderAnalytics() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white  dark:border-white/[0.05] dark:bg-white/[0.03] ">
+    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white  dark:border-white/[0.05] dark:bg-white/[0.03] ">
       <div className="px-4 pt-4 sm:px-6">
         <div className="flex flex-col gap-2 mb-4 sm:flex-row sm:items-center sm:justify-between">
           <div>

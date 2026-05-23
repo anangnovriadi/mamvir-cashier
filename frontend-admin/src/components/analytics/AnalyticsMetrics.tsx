@@ -43,7 +43,7 @@ const AnalyticsMetrics: React.FC = () => {
       {mockData.map((item) => (
         <div
           key={item.id}
-          className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]"
+          className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]"
         >
           <p className="text-gray-500 text-theme-sm dark:text-gray-400">
             {item.title}

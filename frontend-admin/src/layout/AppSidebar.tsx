@@ -1,26 +1,25 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  AddInvoiceIcon,
+  CreditCardIcon,
+  DashboardSquare02Icon,
+  File01Icon,
+  InformationSquareIcon,
+  Package01Icon,
+  PieChartIcon,
+  Settings02Icon,
+  TableIcon,
+} from "@hugeicons/core-free-icons";
 
 // Assume these icons are imported from an icon library
 import {
-  BoxCubeIcon,
-  CalenderIcon,
-  ChatIcon,
   ChevronDownIcon,
-  DocsIcon,
-  GridIcon,
   HorizontaLDots,
-  ListIcon,
-  MailIcon,
-  PageIcon,
-  PieChartIcon,
-  PlugInIcon,
-  TableIcon,
-  TaskIcon,
-  UserCircleIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
-import SidebarWidget from "./SidebarWidget";
+// import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
   name: string;
@@ -29,145 +28,74 @@ type NavItem = {
   subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
 };
 
+const renderSidebarIcon = (
+  icon: React.ComponentProps<typeof HugeiconsIcon>["icon"]
+) => <HugeiconsIcon icon={icon} size={24} strokeWidth={1.8} />;
+
 const navItems: NavItem[] = [
   {
-    icon: <GridIcon />,
+    icon: renderSidebarIcon(DashboardSquare02Icon),
     name: "Dashboard",
+    path: "/",
+  },
+  {
+    icon: renderSidebarIcon(AddInvoiceIcon),
+    name: "Kasir",
+    path: "/invoice",
+  },
+  {
+    icon: renderSidebarIcon(Package01Icon),
+    name: "Produk",
     subItems: [
-      { name: "Ecommerce", path: "/", pro: false },
-      { name: "Analytics", path: "/analytics", pro: true },
-      { name: "Marketing", path: "/marketing", pro: true },
-      { name: "CRM", path: "/crm", pro: true },
-      { name: "Stocks", path: "/stocks", new: true, pro: true },
-      { name: "SaaS", path: "/saas", new: true, pro: true },
+      { name: "Kelola Produk", path: "/file-manager" },
+      { name: "Kategori", path: "/form-elements" },
+      { name: "Inventori", path: "/stocks" },
     ],
   },
   {
-    icon: <CalenderIcon />,
-    name: "Calendar",
-    path: "/calendar",
+    name: "Penjualan",
+    icon: renderSidebarIcon(TableIcon),
+    subItems: [
+      { name: "Transaksi", path: "/invoice" },
+      { name: "Riwayat Penjualan", path: "/basic-tables" },
+      { name: "Retur Penjualan", path: "/data-tables" },
+    ],
   },
   {
-    icon: <UserCircleIcon />,
-    name: "User Profile",
+    name: "Laporan",
+    icon: renderSidebarIcon(PieChartIcon),
+    subItems: [
+      { name: "Laporan Penjualan", path: "/analytics" },
+      { name: "Laporan Stok", path: "/stocks" },
+      { name: "Laporan Keuntungan", path: "/marketing" },
+    ],
+  },
+  {
+    icon: renderSidebarIcon(File01Icon),
+    name: "Pelanggan",
+    path: "/chat",
+  },
+  {
+    icon: renderSidebarIcon(Settings02Icon),
+    name: "Pengaturan",
     path: "/profile",
-  },
-  {
-    name: "Task",
-    icon: <TaskIcon />,
-    subItems: [
-      { name: "List", path: "/task-list", pro: true },
-      { name: "Kanban", path: "/task-kanban", pro: true },
-    ],
-  },
-  {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [
-      { name: "Form Elements", path: "/form-elements", pro: false },
-      { name: "Form Layout", path: "/form-layout", pro: true },
-    ],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [
-      { name: "Basic Tables", path: "/basic-tables", pro: false },
-      { name: "Data Tables", path: "/data-tables", pro: true },
-    ],
-  },
-  {
-    name: "Pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "File Manager", path: "/file-manager", pro: true },
-      { name: "Pricing Tables", path: "/pricing-tables", pro: true },
-      { name: "Faqs", path: "/faq", pro: true },
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
-      { name: "500 Error", path: "/error-500", pro: true },
-      { name: "503 Error", path: "/error-503", pro: true },
-      { name: "Coming Soon", path: "/coming-soon", pro: true },
-      { name: "Maintenance", path: "/maintenance", pro: true },
-      { name: "Success", path: "/success", pro: true },
-    ],
   },
 ];
 
 const othersItems: NavItem[] = [
   {
-    icon: <PieChartIcon />,
-    name: "Charts",
-    subItems: [
-      { name: "Line Chart", path: "/line-chart", pro: true },
-      { name: "Bar Chart", path: "/bar-chart", pro: true },
-      { name: "Pie Chart", path: "/pie-chart", pro: true },
-    ],
+    icon: renderSidebarIcon(CreditCardIcon),
+    name: "Subscription",
+    path: "/pricing-tables",
   },
   {
-    icon: <BoxCubeIcon />,
-    name: "UI Elements",
-    subItems: [
-      { name: "Alerts", path: "/alerts", pro: false },
-      { name: "Avatar", path: "/avatars", pro: false },
-      { name: "Badge", path: "/badge", pro: false },
-      { name: "Breadcrumb", path: "/breadcrumb", pro: true },
-      { name: "Buttons", path: "/buttons", pro: false },
-      { name: "Buttons Group", path: "/buttons-group", pro: true },
-      { name: "Cards", path: "/cards", pro: true },
-      { name: "Carousel", path: "/carousel", pro: true },
-      { name: "Dropdowns", path: "/dropdowns", pro: true },
-      { name: "Images", path: "/images", pro: false },
-      { name: "Links", path: "/links", pro: true },
-      { name: "List", path: "/list", pro: true },
-      { name: "Modals", path: "/modals", pro: true },
-      { name: "Notification", path: "/notifications", pro: true },
-      { name: "Pagination", path: "/pagination", pro: true },
-      { name: "Popovers", path: "/popovers", pro: true },
-      { name: "Progressbar", path: "/progress-bar", pro: true },
-      { name: "Ribbons", path: "/ribbons", pro: true },
-      { name: "Spinners", path: "/spinners", pro: true },
-      { name: "Tabs", path: "/tabs", pro: true },
-      { name: "Tooltips", path: "/tooltips", pro: true },
-      { name: "Videos", path: "/videos", pro: false },
-    ],
-  },
-  {
-    icon: <PlugInIcon />,
-    name: "Authentication",
-    subItems: [
-      { name: "Sign In", path: "/signin", pro: false },
-      { name: "Sign Up", path: "/signup", pro: false },
-      { name: "Reset Password", path: "/reset-password", pro: true },
-      {
-        name: "Two Step Verification",
-        path: "/two-step-verification",
-        pro: true,
-      },
-    ],
+    icon: renderSidebarIcon(InformationSquareIcon),
+    name: "Tentang Aplikasi",
+    path: "/faq",
   },
 ];
 
-const supportItems: NavItem[] = [
-  {
-    icon: <ChatIcon />,
-    name: "Chat",
-    path: "/chat",
-  },
-  {
-    icon: <MailIcon />,
-    name: "Email",
-    subItems: [
-      { name: "Inbox", path: "/inbox" },
-      { name: "Details", path: "/inbox-details" },
-    ],
-  },
-  {
-    icon: <DocsIcon />,
-    name: "Invoice",
-    path: "/invoice",
-  },
-];
+const supportItems: NavItem[] = [];
 
 const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
@@ -379,10 +307,10 @@ const AppSidebar: React.FC = () => {
       className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200 
         ${
           isExpanded || isMobileOpen
-            ? "w-[290px]"
+            ? "w-[280px]"
             : isHovered
-            ? "w-[290px]"
-            : "w-[90px]"
+            ? "w-[280px]"
+            : "w-[84px]"
         }
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
         lg:translate-x-0`}
@@ -441,6 +369,24 @@ const AppSidebar: React.FC = () => {
               </h2>
               {renderMenuItems(navItems, "main")}
             </div>
+            {supportItems.length > 0 && (
+              <div className="">
+                <h2
+                  className={`mt-4 mb-2 text-xs uppercase flex leading-[20px] text-gray-400 ${
+                    !isExpanded && !isHovered
+                      ? "lg:justify-center"
+                      : "justify-start"
+                  }`}
+                >
+                  {isExpanded || isHovered || isMobileOpen ? (
+                    "Support"
+                  ) : (
+                    <HorizontaLDots />
+                  )}
+                </h2>
+                {renderMenuItems(supportItems, "support")}
+              </div>
+            )}
             <div className="">
               <h2
                 className={`mt-4 mb-2 text-xs uppercase flex leading-[20px] text-gray-400 ${
@@ -450,23 +396,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Support"
-                ) : (
-                  <HorizontaLDots />
-                )}
-              </h2>
-              {renderMenuItems(supportItems, "support")}
-            </div>
-            <div className="">
-              <h2
-                className={`mt-4 mb-2 text-xs uppercase flex leading-[20px] text-gray-400 ${
-                  !isExpanded && !isHovered
-                    ? "lg:justify-center"
-                    : "justify-start"
-                }`}
-              >
-                {isExpanded || isHovered || isMobileOpen ? (
-                  "Others"
+                  "Lainnya"
                 ) : (
                   <HorizontaLDots />
                 )}
@@ -475,7 +405,7 @@ const AppSidebar: React.FC = () => {
             </div>
           </div>
         </nav>
-        {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null}
+        {/* {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null} */}
       </div>
     </aside>
   );

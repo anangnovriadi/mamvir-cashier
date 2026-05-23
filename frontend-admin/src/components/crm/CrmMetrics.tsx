@@ -34,7 +34,7 @@ export default function CrmMetrics() {
       {mockData.map((item) => (
         <div
           key={item.id}
-          className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6"
+          className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6"
         >
           <h4 className="font-bold text-gray-800 text-title-sm dark:text-white/90">
             {item.value}

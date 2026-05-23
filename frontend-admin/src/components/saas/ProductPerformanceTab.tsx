@@ -18,7 +18,7 @@ export default function ProductPerformanceTab() {
     setIsOpen(false);
   }
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="mb-6 flex justify-between">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
@@ -53,7 +53,7 @@ export default function ProductPerformanceTab() {
         <div className="flex w-full items-center gap-0.5 rounded-lg bg-gray-100 p-0.5 dark:bg-gray-900">
           <button
             onClick={() => setSelected("daily")}
-            className={`text-sm w-full rounded-md px-3 py-2 font-medium hover:text-gray-900 dark:hover:text-white ${
+            className={`text-sm w-full rounded-lg px-3 py-2 font-medium hover:text-gray-900 dark:hover:text-white ${
               selected === "daily"
                 ? "shadow-sm text-gray-900 dark:text-white bg-white dark:bg-gray-800"
                 : "text-gray-500 dark:text-gray-400"
@@ -63,7 +63,7 @@ export default function ProductPerformanceTab() {
           </button>
           <button
             onClick={() => setSelected("online")}
-            className={`text-sm w-full rounded-md px-3 py-2 font-medium hover:text-gray-900 dark:hover:text-white ${
+            className={`text-sm w-full rounded-lg px-3 py-2 font-medium hover:text-gray-900 dark:hover:text-white ${
               selected === "online"
                 ? "shadow-sm text-gray-900 dark:text-white bg-white dark:bg-gray-800"
                 : "text-gray-500 dark:text-gray-400"
@@ -73,7 +73,7 @@ export default function ProductPerformanceTab() {
           </button>
           <button
             onClick={() => setSelected("new")}
-            className={`text-sm w-full rounded-md px-3 py-2 font-medium hover:text-gray-900 dark:hover:text-white ${
+            className={`text-sm w-full rounded-lg px-3 py-2 font-medium hover:text-gray-900 dark:hover:text-white ${
               selected === "new"
                 ? "shadow-sm text-gray-900 dark:text-white bg-white dark:bg-gray-800"
                 : "text-gray-500 dark:text-gray-400"
@@ -88,7 +88,7 @@ export default function ProductPerformanceTab() {
           {/* Daily Sales Panel */}
           {selected === "daily" && (
             <div className="space-y-4">
-              <div className="grid grid-cols-2 justify-between gap-10 divide-x divide-gray-100 rounded-xl border border-gray-100 bg-white py-4 dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-800/[0.03]">
+              <div className="grid grid-cols-2 justify-between gap-10 divide-x divide-gray-100 rounded-lg border border-gray-100 bg-white py-4 dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-800/[0.03]">
                 <div className="px-5">
                   <span className="block text-sm text-gray-500 dark:text-gray-400">
                     Digital Product
@@ -142,7 +142,7 @@ export default function ProductPerformanceTab() {
                   </div>
                 </div>
               </div>
-              <div className="rounded-xl border border-gray-100 px-5 py-4 dark:border-gray-800">
+              <div className="rounded-lg border border-gray-100 px-5 py-4 dark:border-gray-800">
                 <div className="mb-3 flex items-start justify-between">
                   <div>
                     <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -183,7 +183,7 @@ export default function ProductPerformanceTab() {
           {/* Online Sales Panel */}
           {selected === "online" && (
             <div className="space-y-4">
-              <div className="grid grid-cols-2 justify-between gap-10 divide-x divide-gray-100 rounded-xl border border-gray-100 py-4 dark:divide-gray-800 dark:border-gray-800">
+              <div className="grid grid-cols-2 justify-between gap-10 divide-x divide-gray-100 rounded-lg border border-gray-100 py-4 dark:divide-gray-800 dark:border-gray-800">
                 <div className="px-5">
                   <span className="block text-sm text-gray-500 dark:text-gray-400">
                     Digital Product
@@ -237,7 +237,7 @@ export default function ProductPerformanceTab() {
                   </div>
                 </div>
               </div>
-              <div className="rounded-xl border border-gray-100 px-5 py-4 dark:border-gray-800">
+              <div className="rounded-lg border border-gray-100 px-5 py-4 dark:border-gray-800">
                 <div className="mb-3 flex items-start justify-between">
                   <div>
                     <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -278,7 +278,7 @@ export default function ProductPerformanceTab() {
           {/* New Users Panel */}
           {selected === "new" && (
             <div className="space-y-4">
-              <div className="grid grid-cols-2 justify-between gap-4 rounded-xl border border-gray-100 py-4 dark:border-gray-800">
+              <div className="grid grid-cols-2 justify-between gap-4 rounded-lg border border-gray-100 py-4 dark:border-gray-800">
                 <div className="px-5">
                   <div className="flex -space-x-3">
                     <img
@@ -312,7 +312,7 @@ export default function ProductPerformanceTab() {
                   </div>
                 </div>
               </div>
-              <div className="rounded-xl border border-gray-100 px-5 py-4 dark:border-gray-800">
+              <div className="rounded-lg border border-gray-100 px-5 py-4 dark:border-gray-800">
                 <div className="mb-3 flex items-start justify-between">
                   <div>
                     <span className="text-sm font-medium text-gray-500 dark:text-gray-400">

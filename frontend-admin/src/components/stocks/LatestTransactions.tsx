@@ -52,7 +52,7 @@ const transactionData = [
 
 export default function LatestTransactions() {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white pt-4 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div className="rounded-lg border border-gray-200 bg-white pt-4 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="flex flex-col gap-2 px-5 mb-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">

@@ -1,6 +1,6 @@
 export default function SaasMetrics() {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
@@ -8,7 +8,7 @@ export default function SaasMetrics() {
           </h3>
         </div>
       </div>
-      <div className="grid rounded-2xl border border-gray-200 bg-white sm:grid-cols-2 xl:grid-cols-4 dark:border-gray-800 dark:bg-gray-900">
+      <div className="grid rounded-lg border border-gray-200 bg-white sm:grid-cols-2 xl:grid-cols-4 dark:border-gray-800 dark:bg-gray-900">
         <div className="border-b border-gray-200 px-6 py-5 sm:border-r xl:border-b-0 dark:border-gray-800">
           <span className="text-sm text-gray-500 dark:text-gray-400">
             Total Revenue

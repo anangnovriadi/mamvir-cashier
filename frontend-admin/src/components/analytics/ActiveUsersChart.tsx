@@ -126,7 +126,7 @@ export default function ActiveUsersChart() {
     setIsOpen(false);
   }
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
+    <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
       <div className="flex items-start justify-between">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
           Active Users
@@ -171,7 +171,7 @@ export default function ActiveUsersChart() {
         </span>
       </div>
 
-      <div className="my-5 min-h-[155px] rounded-xl bg-gray-50 dark:bg-gray-900">
+      <div className="my-5 min-h-[155px] rounded-lg bg-gray-50 dark:bg-gray-900">
         <div className="-ml-[22px] -mr-2.5 h-full">
           <Chart options={options} series={series} type="area" height={140} />
         </div>

@@ -20,7 +20,7 @@ const StockCard: React.FC<StockCardProps> = ({
   changeDirection,
 }) => {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white px-6 pb-5 pt-6 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div className="rounded-lg border border-gray-200 bg-white px-6 pb-5 pt-6 dark:border-gray-800 dark:bg-white/[0.03]">
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10">
           <img src={imgUrl} alt={companyName} />
