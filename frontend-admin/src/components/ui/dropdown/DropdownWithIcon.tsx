@@ -65,7 +65,7 @@ export default function DropdownWithIcon() {
                   fill=""
                 />
               </svg>
-              Edit profile
+              Edit Profil
             </DropdownItem>
           </li>
           <li>
@@ -137,7 +137,7 @@ export default function DropdownWithIcon() {
                   fill=""
                 />
               </svg>
-              Sign out
+              Keluar
             </DropdownItem>
           </li>
         </ul>

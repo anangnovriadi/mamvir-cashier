@@ -65,7 +65,7 @@ export default function DropdownWithIconAndDivider() {
                   fill=""
                 />
               </svg>
-              Edit profile
+              Edit Profil
             </DropdownItem>
           </li>
           <li>
@@ -88,7 +88,7 @@ export default function DropdownWithIconAndDivider() {
                   fill=""
                 />
               </svg>
-              Settings
+              Pengaturan Akun
             </DropdownItem>
           </li>
           <li>

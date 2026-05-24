@@ -25,15 +25,15 @@ const metrics = [
   },
   // Baris 2
   {
-    label: "Penjualan Sudah Bayar",
-    value: "Rp 18.750.000",
+    label: "Penjualan Sudah Bayar Hari Ini",
+    value: "Rp 2.750.000",
     icon: CheckmarkCircle01Icon,
     iconBg: "bg-green-50 dark:bg-green-500/10",
     iconColor: "text-green-500 dark:text-green-400",
   },
   {
-    label: "Penjualan Belum Bayar",
-    value: "Rp 4.250.000",
+    label: "Penjualan Belum Bayar Hari Ini",
+    value: "Rp 250.000",
     icon: Clock01Icon,
     iconBg: "bg-red-50 dark:bg-red-500/10",
     iconColor: "text-red-500 dark:text-red-400",

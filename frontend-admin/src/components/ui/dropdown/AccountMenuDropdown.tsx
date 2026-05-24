@@ -53,7 +53,7 @@ const AccountMenuDropdown: React.FC = () => {
               text-gray-700 hover:bg-gray-100 dark:text-gray-300
               dark:hover:bg-white/5"
             >
-              Edit Profile
+              Edit Profil
             </DropdownItem>
           </li>
           <li>
@@ -63,7 +63,7 @@ const AccountMenuDropdown: React.FC = () => {
               text-gray-700 hover:bg-gray-100 dark:text-gray-300
               dark:hover:bg-white/5"
             >
-              Account Settings
+              Pengaturan Akun
             </DropdownItem>
           </li>
           <li>

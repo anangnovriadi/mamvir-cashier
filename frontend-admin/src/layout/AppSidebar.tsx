@@ -336,8 +336,8 @@ const AppSidebar: React.FC = () => {
                 className="hidden dark:block"
                 src="/images/logo/logo-mamvir-white.svg"
                 alt="Logo"
-                width={150}
-                height={40}
+                width={180}
+                height={30}
               />
             </>
           ) : (

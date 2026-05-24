@@ -61,7 +61,7 @@ export default function UserDropdown() {
                 size={20}
                 strokeWidth={1.8}
               />
-              Edit Profile
+              Edit Profil
             </DropdownItem>
           </li>
           <li>
@@ -78,7 +78,7 @@ export default function UserDropdown() {
                 size={20}
                 strokeWidth={1.8}
               />
-              Account Settings
+              Pengaturan Akun
             </DropdownItem>
           </li>
         </ul>
@@ -95,7 +95,7 @@ export default function UserDropdown() {
             size={20}
             strokeWidth={1.8}
           />
-          Sign Out
+          Keluar
         </DropdownItem>
       </Dropdown>
     </div>
