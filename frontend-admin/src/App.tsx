@@ -24,7 +24,7 @@ import Notifications from "./pages/UiElements/Notifications";
 import LineChart from "./pages/Charts/LineChart";
 import BarChart from "./pages/Charts/BarChart";
 import PieChart from "./pages/Charts/PieChart";
-import Invoices from "./pages/Invoices";
+import Cashier from "./pages/Cashier";
 import ComingSoon from "./pages/OtherPage/ComingSoon";
 import FileManager from "./pages/FileManager";
 import Calendar from "./pages/Calendar";
@@ -78,7 +78,6 @@ export default function App() {
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
-            <Route path="/invoice" element={<Invoices />} />
             <Route path="/faq" element={<Faqs />} />
             <Route path="/pricing-tables" element={<PricingTables />} />
             <Route path="/blank" element={<Blank />} />
@@ -137,6 +136,7 @@ export default function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/invoice" element={<Cashier />} />
           <Route
             path="/two-step-verification"
             element={<TwoStepVerification />}
