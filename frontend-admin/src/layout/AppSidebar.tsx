@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  AddInvoiceIcon,
+  CashierIcon,
   CreditCardIcon,
   DashboardSquare02Icon,
   File01Icon,
@@ -39,7 +39,7 @@ const navItems: NavItem[] = [
     path: "/",
   },
   {
-    icon: renderSidebarIcon(AddInvoiceIcon),
+    icon: renderSidebarIcon(CashierIcon),
     name: "Kasir",
     path: "/invoice",
   },
@@ -318,7 +318,7 @@ const AppSidebar: React.FC = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`pt-6 pb-2 flex ${
+        className={`hidden pt-6 pb-2 lg:flex ${
           !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
         }`}
       >
@@ -334,19 +334,29 @@ const AppSidebar: React.FC = () => {
               />
               <img
                 className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
+                src="/images/logo/logo-mamvir-white.svg"
                 alt="Logo"
                 width={150}
                 height={40}
               />
             </>
           ) : (
-            <img
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+            <>
+              <img
+                className="dark:hidden"
+                src="/images/logo/logo-icon.svg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+              <img
+                className="hidden dark:block"
+                src="/images/logo/logo-icon-dark.svg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+            </>
           )}
         </Link>
       </div>

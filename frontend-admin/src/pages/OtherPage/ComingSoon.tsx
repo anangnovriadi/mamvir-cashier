@@ -26,7 +26,7 @@ export default function ComingSoon() {
               />
               <img
                 className="hidden dark:block"
-                src="./images/logo/logo-dark.svg"
+                src="./images/logo/logo-mamvir-white.svg"
                 alt="Logo"
               />
             </Link>

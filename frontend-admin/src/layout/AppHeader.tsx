@@ -4,7 +4,6 @@ import { Link } from "react-router";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   Cancel01Icon,
-  GlobalIcon,
   MoreHorizontalIcon,
   PanelLeftIcon,
 } from "@hugeicons/core-free-icons";
@@ -14,6 +13,9 @@ import UserDropdown from "../components/header/UserDropdown";
 
 const AppHeader: React.FC = () => {
   const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<
+    "Indonesia" | "English"
+  >("Indonesia");
 
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
 
@@ -53,7 +55,7 @@ const AppHeader: React.FC = () => {
             />
             <img
               className="hidden dark:block"
-              src="./images/logo/logo-dark.svg"
+              src="./images/logo/logo-mamvir-white.svg"
               alt="Logo"
             />
           </Link>
@@ -80,9 +82,22 @@ const AppHeader: React.FC = () => {
             <button
               type="button"
               aria-label="Change Language"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors duration-200 ease-out hover:bg-gray-100/80 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800/70"
+              onClick={() =>
+                setSelectedLanguage((prev) =>
+                  prev === "Indonesia" ? "English" : "Indonesia"
+                )
+              }
+              className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-gray-200 bg-white transition-colors duration-200 ease-out hover:bg-gray-100/80 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800/70"
             >
-              <HugeiconsIcon icon={GlobalIcon} size={20} strokeWidth={1.8} />
+              <img
+                src={
+                  selectedLanguage === "Indonesia"
+                    ? "/images/indonesia.png"
+                    : "/images/united-kingdom.png"
+                }
+                alt={selectedLanguage}
+                className="h-5 w-5 rounded-full object-cover"
+              />
             </button>
           </div>
           <UserDropdown />
