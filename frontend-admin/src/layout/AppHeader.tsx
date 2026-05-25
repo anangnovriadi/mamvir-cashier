@@ -10,14 +10,13 @@ import {
 import { useSidebar } from "../context/SidebarContext";
 import { ThemeToggleButton } from "../components/common/ThemeToggleButton";
 import UserDropdown from "../components/header/UserDropdown";
+import { useLanguage } from "../context/LanguageContext";
 
 const AppHeader: React.FC = () => {
   const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<
-    "Indonesia" | "English"
-  >("Indonesia");
 
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
+  const { locale, toggleLanguage } = useLanguage();
 
   const handleToggle = () => {
     if (window.innerWidth >= 1024) {
@@ -82,20 +81,16 @@ const AppHeader: React.FC = () => {
             <button
               type="button"
               aria-label="Change Language"
-              onClick={() =>
-                setSelectedLanguage((prev) =>
-                  prev === "Indonesia" ? "English" : "Indonesia"
-                )
-              }
+              onClick={toggleLanguage}
               className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-gray-200 bg-white transition-colors duration-200 ease-out hover:bg-gray-100/80 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800/70"
             >
               <img
                 src={
-                  selectedLanguage === "Indonesia"
+                  locale === "id"
                     ? "/images/indonesia.png"
                     : "/images/united-kingdom.png"
                 }
-                alt={selectedLanguage}
+                alt={locale === "id" ? "Indonesia" : "English"}
                 className="h-5 w-5 rounded-full object-cover"
               />
             </button>

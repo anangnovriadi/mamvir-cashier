@@ -1,20 +1,24 @@
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
+import { useLanguage } from "../../context/LanguageContext";
 
-const products = [
-  "Ayam Bakar",
-  "Nasi Goreng",
-  "Mie Goreng",
-  "Es Teh",
-  "Jus Alpukat",
-  "Soto Ayam",
-  "Rendang",
-  "Gado-Gado",
+const productKeys = [
+  "product.ayamBakar",
+  "product.nasiGoreng",
+  "product.mieGoreng",
+  "product.esTeh",
+  "product.jusAlpukat",
+  "product.sotoAyam",
+  "product.rendang",
+  "product.gadoGado",
 ];
 
 const salesData = [42, 78, 55, 91, 38, 63, 47, 29];
 
 export default function PenjualanPerProdukChart() {
+  const { t } = useLanguage();
+  const products = productKeys.map((key) => t(key));
+
   const options: ApexOptions = {
     colors: ["var(--color-mamvir-500)"],
     chart: {
@@ -58,14 +62,14 @@ export default function PenjualanPerProdukChart() {
     },
     tooltip: {
       y: {
-        formatter: (val: number) => `${val} terjual`,
+        formatter: (val: number) => `${val} ${t("dashboard.chart.soldSuffix")}`,
       },
     },
   };
 
   const series = [
     {
-      name: "Terjual",
+      name: t("dashboard.chart.sold"),
       data: salesData,
     },
   ];
@@ -74,10 +78,10 @@ export default function PenjualanPerProdukChart() {
     <div className="flex flex-col h-full rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-          Penjualan Berdasarkan Produk
+          {t("dashboard.chart.salesByProduct")}
         </h3>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Jumlah produk terjual bulan ini
+          {t("dashboard.chart.salesByProductDesc")}
         </p>
       </div>
       <div className="flex-1">
