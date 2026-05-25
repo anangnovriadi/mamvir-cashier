@@ -19,13 +19,14 @@ import {
   HorizontaLDots,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
+import { useLanguage } from "../context/LanguageContext";
 // import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
-  name: string;
+  nameKey: string;
   icon: React.ReactNode;
   path?: string;
-  subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
+  subItems?: { nameKey: string; path: string; pro?: boolean; new?: boolean }[];
 };
 
 const renderSidebarIcon = (
@@ -35,49 +36,49 @@ const renderSidebarIcon = (
 const navItems: NavItem[] = [
   {
     icon: renderSidebarIcon(DashboardSquare02Icon),
-    name: "Dashboard",
+    nameKey: "nav.dashboard",
     path: "/",
   },
   {
     icon: renderSidebarIcon(CashierIcon),
-    name: "Kasir",
+    nameKey: "nav.cashier",
     path: "/invoice",
   },
   {
     icon: renderSidebarIcon(Package01Icon),
-    name: "Produk",
+    nameKey: "nav.product",
     subItems: [
-      { name: "Kelola Produk", path: "/file-manager" },
-      { name: "Kategori", path: "/form-elements" },
-      { name: "Inventori", path: "/stocks" },
+      { nameKey: "nav.product.manage", path: "/produk/kelola" },
+      { nameKey: "nav.product.category", path: "/produk/kategori" },
+      { nameKey: "nav.product.inventory", path: "/produk/inventori" },
     ],
   },
   {
-    name: "Penjualan",
+    nameKey: "nav.sales",
     icon: renderSidebarIcon(TableIcon),
     subItems: [
-      { name: "Transaksi", path: "/invoice" },
-      { name: "Riwayat Penjualan", path: "/basic-tables" },
-      { name: "Retur Penjualan", path: "/data-tables" },
+      { nameKey: "nav.sales.transaction", path: "/invoice" },
+      { nameKey: "nav.sales.history", path: "/basic-tables" },
+      { nameKey: "nav.sales.return", path: "/data-tables" },
     ],
   },
   {
-    name: "Laporan",
+    nameKey: "nav.report",
     icon: renderSidebarIcon(PieChartIcon),
     subItems: [
-      { name: "Laporan Penjualan", path: "/analytics" },
-      { name: "Laporan Stok", path: "/stocks" },
-      { name: "Laporan Keuntungan", path: "/marketing" },
+      { nameKey: "nav.report.sales", path: "/analytics" },
+      { nameKey: "nav.report.stock", path: "/stocks" },
+      { nameKey: "nav.report.profit", path: "/marketing" },
     ],
   },
   {
     icon: renderSidebarIcon(File01Icon),
-    name: "Pelanggan",
+    nameKey: "nav.customer",
     path: "/chat",
   },
   {
     icon: renderSidebarIcon(Settings02Icon),
-    name: "Pengaturan",
+    nameKey: "nav.settings",
     path: "/profile",
   },
 ];
@@ -85,12 +86,12 @@ const navItems: NavItem[] = [
 const othersItems: NavItem[] = [
   {
     icon: renderSidebarIcon(CreditCardIcon),
-    name: "Subscription",
+    nameKey: "nav.subscription",
     path: "/pricing-tables",
   },
   {
     icon: renderSidebarIcon(InformationSquareIcon),
-    name: "Tentang Aplikasi",
+    nameKey: "nav.about",
     path: "/faq",
   },
 ];
@@ -99,6 +100,7 @@ const supportItems: NavItem[] = [];
 
 const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
+  const { t } = useLanguage();
   const location = useLocation();
 
   const [openSubmenu, setOpenSubmenu] = useState<{
@@ -180,7 +182,7 @@ const AppSidebar: React.FC = () => {
     <ul className="flex flex-col">
       {items.map((nav, index) => (
         <li
-          key={nav.name}
+          key={nav.nameKey}
           className="relative"
         >
           {nav.subItems ? (
@@ -206,7 +208,7 @@ const AppSidebar: React.FC = () => {
                 {nav.icon}
               </span>
               {(isExpanded || isHovered || isMobileOpen) && (
-                <span className="menu-item-text">{nav.name}</span>
+                <span className="menu-item-text">{t(nav.nameKey)}</span>
               )}
               {(isExpanded || isHovered || isMobileOpen) && (
                 <ChevronDownIcon
@@ -237,7 +239,7 @@ const AppSidebar: React.FC = () => {
                   {nav.icon}
                 </span>
                 {(isExpanded || isHovered || isMobileOpen) && (
-                  <span className="menu-item-text">{nav.name}</span>
+                  <span className="menu-item-text">{t(nav.nameKey)}</span>
                 )}
               </Link>
             )
@@ -257,7 +259,7 @@ const AppSidebar: React.FC = () => {
             >
               <ul className="relative mt-2 space-y-1 py-1 pl-9 before:absolute before:inset-y-0 before:left-6 before:w-px before:bg-gray-200 dark:before:bg-gray-800">
                 {nav.subItems.map((subItem) => (
-                  <li key={subItem.name}>
+                  <li key={subItem.nameKey}>
                     <Link
                       to={subItem.path}
                       className={`menu-dropdown-item ${
@@ -266,7 +268,7 @@ const AppSidebar: React.FC = () => {
                           : "menu-dropdown-item-inactive"
                       }`}
                     >
-                      {subItem.name}
+                      {t(subItem.nameKey)}
                       <span className="flex items-center gap-1 ml-auto">
                         {subItem.new && (
                           <span
@@ -372,7 +374,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Menu"
+                  t("sidebar.menu")
                 ) : (
                   <HorizontaLDots className="size-6" />
                 )}
@@ -389,7 +391,7 @@ const AppSidebar: React.FC = () => {
                   }`}
                 >
                   {isExpanded || isHovered || isMobileOpen ? (
-                    "Support"
+                    t("sidebar.support")
                   ) : (
                     <HorizontaLDots />
                   )}
@@ -406,7 +408,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Lainnya"
+                  t("sidebar.others")
                 ) : (
                   <HorizontaLDots />
                 )}

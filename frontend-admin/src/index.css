@@ -133,6 +133,18 @@ layer(base);
   --color-warning-900: #7a2e0e;
   --color-warning-950: #4e1d09;
 
+  --color-mamvir-50: #fffdea;
+  --color-mamvir-100: #fff8c5;
+  --color-mamvir-200: #fff185;
+  --color-mamvir-300: #ffe446;
+  --color-mamvir-400: #ffd31b;
+  --color-mamvir-500: #ffb703;
+  --color-mamvir-600: #e28c00;
+  --color-mamvir-700: #bb6202;
+  --color-mamvir-800: #984b08;
+  --color-mamvir-900: #7c3e0b;
+  --color-mamvir-950: #481f00;
+
   --color-theme-pink-500: #ee46bc;
 
   --color-theme-purple-500: #7a5af8;

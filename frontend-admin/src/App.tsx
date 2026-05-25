@@ -59,6 +59,9 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import TaskList from "./pages/Task/TaskList";
 import Saas from "./pages/Dashboard/Saas";
+import KelolaProduk from "./pages/Produk/KelolaProduk";
+import KategoriProduk from "./pages/Produk/KategoriProduk";
+import InventoriProduk from "./pages/Produk/InventoriProduk";
 
 export default function App() {
   return (
@@ -74,6 +77,9 @@ export default function App() {
             <Route path="/crm" element={<Crm />} />
             <Route path="/stocks" element={<Stocks />} />
             <Route path="/saas" element={<Saas />} />
+            <Route path="/produk/kelola" element={<KelolaProduk />} />
+            <Route path="/produk/kategori" element={<KategoriProduk />} />
+            <Route path="/produk/inventori" element={<InventoriProduk />} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />

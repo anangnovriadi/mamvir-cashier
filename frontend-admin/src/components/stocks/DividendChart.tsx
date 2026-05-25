@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const DividendChart: React.FC = () => {
   const options: ApexOptions = {
-    colors: ["#465fff"],
+    colors: ["var(--color-mamvir-500)"],
     chart: {
       fontFamily: "Outfit, sans-serif",
       type: "bar",

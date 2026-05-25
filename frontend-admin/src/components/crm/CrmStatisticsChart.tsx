@@ -9,7 +9,7 @@ export default function CrmStatisticsChart() {
       position: "top",
       horizontalAlign: "left",
     },
-    colors: ["#465FFF", "#9CB9FF"],
+    colors: ["var(--color-mamvir-500)", "var(--color-mamvir-200)"],
     chart: {
       fontFamily: "Outfit, sans-serif",
       height: 220,

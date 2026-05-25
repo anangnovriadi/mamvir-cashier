@@ -6,13 +6,16 @@ import "simplebar-react/dist/simplebar.min.css";
 import App from "./App.tsx";
 import { AppWrapper } from "./components/common/PageMeta.tsx";
 import { ThemeProvider } from "./context/ThemeContext.tsx";
+import { LanguageProvider } from "./context/LanguageContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <AppWrapper>
-        <App />
-      </AppWrapper>
+      <LanguageProvider>
+        <AppWrapper>
+          <App />
+        </AppWrapper>
+      </LanguageProvider>
     </ThemeProvider>
   </StrictMode>
 );

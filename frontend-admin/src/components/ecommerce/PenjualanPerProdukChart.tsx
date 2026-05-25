@@ -16,7 +16,7 @@ const salesData = [42, 78, 55, 91, 38, 63, 47, 29];
 
 export default function PenjualanPerProdukChart() {
   const options: ApexOptions = {
-    colors: ["#465fff"],
+    colors: ["var(--color-mamvir-500)"],
     chart: {
       fontFamily: "Outfit, sans-serif",
       type: "bar",

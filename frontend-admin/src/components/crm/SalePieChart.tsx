@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function SalePieChart() {
   // ApexCharts configuration
   const options: ApexOptions = {
-    colors: ["#3641f5", "#7592ff", "#dde9ff"],
+    colors: ["var(--color-mamvir-600)", "var(--color-mamvir-300)", "var(--color-mamvir-50)"],
     labels: ["Affiliate", "Direct", "Adsense"],
     chart: {
       fontFamily: "Outfit, sans-serif",

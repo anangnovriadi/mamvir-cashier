@@ -1,6 +1,5 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Coins01Icon,
   GridIcon,
   Package01Icon,
   Clock01Icon,
@@ -13,15 +12,15 @@ const metrics = [
     label: "Total Produk",
     value: "248",
     icon: Package01Icon,
-    iconBg: "bg-blue-50 dark:bg-blue-500/10",
-    iconColor: "text-blue-500 dark:text-blue-400",
+    iconBg: "bg-mamvir-50 dark:bg-mamvir-500/15",
+    iconColor: "text-mamvir-700 dark:text-mamvir-400",
   },
   {
     label: "Total Kategori",
     value: "12",
     icon: GridIcon,
-    iconBg: "bg-purple-50 dark:bg-purple-500/10",
-    iconColor: "text-purple-500 dark:text-purple-400",
+    iconBg: "bg-mamvir-100 dark:bg-mamvir-500/20",
+    iconColor: "text-mamvir-800 dark:text-mamvir-300",
   },
   // Baris 2
   {
